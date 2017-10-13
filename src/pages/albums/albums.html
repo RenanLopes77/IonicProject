@@ -1,0 +1,35 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title>
+            Fotos
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col col-3>
+                <ion-label> Selecione um usuario </ion-label>
+                <ion-item>
+                    <ion-label> Usuario </ion-label>
+                    <ion-select class="user"(ionChange)="getUserAlbums($event)" [(ngModel)]="userId">
+                        <ion-option value="{{user.id}}" *ngFor="let user of users" [selected]="user.id == 1"> 
+                            {{user.name}}
+                        </ion-option>
+                    </ion-select>
+                </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col col-1 
+                class="image; texto2" 
+                (click)="loadAlbum(userAlbum.id)"
+                *ngFor="let userAlbum of userAlbums">
+                <img src="https://semantic-ui.com/images/wireframe/image.png"/>
+                <div>
+                    Album {{userAlbum.id}}
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

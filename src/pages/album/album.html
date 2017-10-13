@@ -1,0 +1,22 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title>
+            Album {{albumId}}
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-grid> 
+        <ion-row>      
+            <ion-col col-1 class="image" *ngFor="let foto of album " (click)="loadFoto(foto)">
+                <img src={{foto.url}}/>
+                <div>
+                    {{foto.id}}
+                </div>
+                <div class="texto">
+                    {{foto.title}}
+                </div>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

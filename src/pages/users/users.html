@@ -1,0 +1,137 @@
+<ion-header>
+    <ion-navbar color="dark">
+        <ion-title>Usuarios</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-1>
+                    <ion-item>
+                        <ion-label> Phone</ion-label>
+                        <ion-toggle color="dark" [(ngModel)]="showPhone"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1>
+                    <ion-item>
+                        <ion-label> Email</ion-label>
+                        <ion-toggle color="dark" [(ngModel)]="showEmail"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1>
+                    <ion-item>
+                        <ion-label> Website</ion-label>
+                        <ion-toggle color="dark" [(ngModel)]="showSite"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-md-1>
+                    <ion-item>
+                        <ion-label> Company</ion-label>
+                        <ion-toggle color="dark" [(ngModel)]="showCompany"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1>
+                    <ion-item>
+                        <ion-label> Adress</ion-label>
+                        <ion-toggle color="dark" [(ngModel)]="showAdress"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-1 *ngIf="showAdress">
+                    <ion-item>
+                        <ion-label> Geo </ion-label>
+                        <ion-toggle color="dark" [(ngModel)]="showGeoLocation"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    <ion-list>
+        <ion-item *ngFor="let user of users" (click)="clickUser()"> 
+            <ion-icon class="user" name="contact">
+                {{user.name}} 
+            </ion-icon> 
+            <div *ngIf="showPhone">
+                <ion-grid>
+                    <ion-row col-md-3 offset-md-1 >
+                        <ion-icon name="ios-call"></ion-icon>
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.phone}}                
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div *ngIf="showEmail">
+                <ion-grid>
+                    <ion-row col-md-3 offset-md-1>
+                        <ion-icon name="ios-mail"></ion-icon>
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.email}}                 
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div *ngIf="showSite">
+                <ion-grid>
+                    <ion-row col-md-3 offset-md-1>
+                        <ion-icon name="ios-link"></ion-icon>
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.website}}                 
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div *ngIf="showCompany">   
+                <ion-grid>
+                    <ion-row col-md-3 offset-md-1>
+                        <ion-icon name="ios-briefcase"></ion-icon>           
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.company.name}} 
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.company.catchPhrase}}                               
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.company.bs}}                                
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div *ngIf="showAdress">   
+                <ion-grid>
+                    <ion-row col-md-3 offset-md-1>
+                        <ion-icon name="ios-home"></ion-icon>
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.address.street}} 
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.address.suite}}                               
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.address.city}}                                
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        {{user.address.zipcode}}                                
+                    </ion-row>
+                </ion-grid>
+            </div>
+            <div *ngIf="showGeoLocation && showAdress">   
+                <ion-grid>
+                    <ion-row col-md-3 offset-md-1>
+                        <ion-icon name="map"></ion-icon>
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>
+                        Latitude: {{user.address.geo.lat}}              
+                    </ion-row>
+                    <ion-row col-md-3 offset-md-1>                          
+                        Longitude: {{user.address.geo.lng}} 
+                    </ion-row>
+                </ion-grid>
+            </div> 
+            <br>
+            <span class="link" (click)="loadAlbums(user.id)"> 
+                <ion-icon name="md-images"></ion-icon>
+                Ver Fotos
+            </span>
+        </ion-item>
+    </ion-list>
+</ion-content>

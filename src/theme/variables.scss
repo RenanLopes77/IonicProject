@@ -1,0 +1,184 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #488aff,
+  secondary:  #32db64,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+@font-face {
+  font-family: 'Humanst';
+  src: url('../assets/fonts/roboto-light.woff2') format('woff2'), url('../assets/fonts/roboto-light.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  font-family: 'Humanst';
+}
+
+// CSS -----------------
+// ---------------------
+.card{
+    ion-card {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+    }
+  
+    .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #000000;
+    }
+  
+    .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #000000;
+    }
+}
+.texto{
+      position: center;
+      text-align: center;
+      padding-top: 1.0em;
+      font-size: 1.0em;
+      font-weight: bold;
+      color: #FFFFFF;
+      background-color: #222; 
+      width: 143px;
+      height: 100px; 
+}
+
+.texto2{
+    cursor: pointer;
+    position: center;
+    text-align: center;
+    padding-top: 1.0em;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #222;
+    border-style: solid;
+    box-shadow: 3px 3px 1px #888888; 
+}
+
+.texto3{
+    position: center;
+    text-align: center;
+    padding-top: 1.0em;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #FFFFFF;
+    background-color: #222;
+    border-style: solid;
+    box-shadow: 3px 3px 1px #888888; 
+    width: 200px;
+    height: 70px; 
+}
+
+.image {
+    cursor: pointer;
+    position: absolute;
+    border-style: solid;
+    border-color: #222;
+    box-shadow: 5px 5px 2px #888888;
+}
+
+.image2 {
+    border-style: solid;
+    border-color: #222;
+    box-shadow: 5px 5px 2px #888888;
+}
+
+.link{
+    cursor: pointer;
+}
+
